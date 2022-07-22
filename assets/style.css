@@ -11,3 +11,28 @@
     display: flex;
     justify-content: center;
 }
+
+.headertext {
+    color:Blue;
+}
+
+/*Body*/
+body {
+    font-family: sans-serif;
+}
+
+.input {
+    text-align: center;
+    margin: 100px;
+}
+
+.inputValue {
+    height: 75px;
+    width: 500px;
+    background: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    padding: 20px 20px;
+}
