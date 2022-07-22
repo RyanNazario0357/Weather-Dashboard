@@ -29,8 +29,11 @@ function getLocation(searchInput){
                 console.log(data)
                 var lattitude = data[0].lat;
                 var longitude = data[0].lon;
-                
-            }
+                city = data[0].name;
+                var lattitudeStr = lattitude.toString();
+                var longitudeStr = longitude.toString();
+                getWeather(lattitudeStr, longitudeStr);
+            });
         }
-    }
-}
+    });
+};
