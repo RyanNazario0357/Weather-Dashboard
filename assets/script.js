@@ -21,6 +21,7 @@ button.addEventListener('click', function() {
 
 function getLocation(searchInput){
 
+    //Api fetch section
     var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchInput + "&limit=1&appid+" + apiKey;
     fetch(apiUrl)
     .then(function(response) {
@@ -37,3 +38,19 @@ function getLocation(searchInput){
         }
     });
 };
+
+function getWeather(lat, lon){
+    var apiUrl = "https://api.openweathermap.org/date/2.5/oncall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=" + apiKey;
+    fetch (apiUrl).then(function(response){
+        if(response.ok){
+            response.json().then(function(data){
+                console.log(data)
+
+                var nameElement = $(".name");
+                nameElement.text(city.toUpperCase()+ currentDate);
+                var tempElement = $(".temp");
+                tempElement.text(data.current.temp);
+            })
+        }
+    })
+}
